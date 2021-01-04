@@ -3,11 +3,11 @@
 block_cipher = None
 
 
-a = Analysis(['autozoom.py'],
+a = Analysis(['autozoom.pyw'],
              pathex=['C:\\Users\\Jerry Luo\\Desktop\\Projects\\Scripts\\autozoom'],
              binaries=[],
              datas=[],
-             hiddenimports=['pyautogui','schedule','opencv-python','pillow'],
+             hiddenimports=['pyautogui','schedule','opencv-python','pillow','ttkthemes'],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
@@ -21,8 +21,6 @@ a.datas += [
    ("scheduleB.json", "C:\\Users\\Jerry Luo\\Desktop\\Projects\\Scripts\\autozoom\\scheduleB.json","DATA"),
    ("scheduleC.json", "C:\\Users\\Jerry Luo\\Desktop\\Projects\\Scripts\\autozoom\\scheduleC.json","DATA"),
    ("join.PNG", "C:\\Users\\Jerry Luo\\Desktop\\Projects\\Scripts\\autozoom\\join.PNG","DATA"),
-   ("open.png", "C:\\Users\\Jerry Luo\\Desktop\\Projects\\Scripts\\autozoom\\open.png","DATA"),
-   ("password.PNG", "C:\\Users\\Jerry Luo\\Desktop\\Projects\\Scripts\\autozoom\\password.PNG","DATA"),
 ]
 
 pyz = PYZ(a.pure, a.zipped_data,
@@ -36,7 +34,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True )
+          console=False )
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
